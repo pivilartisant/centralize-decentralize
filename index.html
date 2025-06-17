@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>centralize/decentralize</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Centralize/Decentralize</title>
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1 id="message"></h1>
+
+  <script>
+    const isLocalhost = location.hostname.endsWith("localhost") || !location.hostname;
+    const isDecentralized = isLocalhost;
+
+    document.body.style.backgroundColor = isDecentralized ? "black" : "white";
+    document.body.style.color = isDecentralized ? "white" : "black";
+
+   const message = isDecentralized
+  ? "&lt;c&gt;Centralize&lt;/c&gt;"
+  : "&lt;d&gt;Decentralize&lt;/d&gt;";
+    document.getElementById("message").innerHTML = message;
+  </script>
+</body>
 </html>
